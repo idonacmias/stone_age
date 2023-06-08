@@ -8,7 +8,7 @@ the object of the game is to collect the most point.
 
 a player collect point by building huoses, and buying advence cards.
 
-ruond have to phases, asining phase and colecting phase.
+ruond have to phases, assigned phase and collecting phase.
 
 eache player at his turn place a tribe members (or member) on the bord, assine to mission, whan ther are no more tribe member to place, the player start the collecting phase.
 
