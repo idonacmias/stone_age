@@ -1,8 +1,8 @@
-from Player import Player
-
+from player import player
+from bord import bord
 
 def main():
-    players = [Player() for _ in range(3)]
+    players = [player.copy() for _ in range(3)]
     cards = [i for i in range(10)]
 
     while len(cards) > 3:
@@ -19,14 +19,14 @@ def assigned_phase(players):
         switch_player(corent_player, len_players)
 
 def tribe_members_lefts_to_place(players):
-    return sum([player.tribe_members for player in players]) > 0
+    return sum([player['tribe_members'] for player in players]) > 0
 
 def assigned_tribe_member_to_task(corent_player):
     tribe_members_in_task = choose_task()
-    corent_player.tribe_members -= tribe_members_in_task
+    corent_player['tribe_members'] -= tribe_members_in_task
 
 def choose_task():
-    pass    
+    return 1    
 
 def switch_player(corent_player, len_players):
     if corent_player == len_players - 1:
