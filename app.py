@@ -1,15 +1,21 @@
 from player import player
-from bord import bord
+from houses import houses
 
-def main():
+
+def main(houses):
     players = [player.copy() for _ in range(3)]
-    cards = [i for i in range(10)]
-
-    while len(cards) > 3:
+    advence_cards = [i for i in range(10)]
+    house_pille_size = len(houses) // len(players)
+    houses = tuple(houses[i * house_pille_size:house_pille_size * (1 + i)] for i in range(len(players)))
+    while len(advence_cards) > 3 or is_houses_pile_not_empty():
         assigned_phase(players)
         collecting_phase()
         change_first_palce_player(players)
         print(players)
+
+def is_houses_pile_not_empty():
+    if 0 in (len(houses_pille) for house__pille in houses):
+        return True
 
 def assigned_phase(players):
     corent_player = 0
@@ -43,4 +49,4 @@ def change_first_palce_player(players):
 
 
 if __name__ == '__main__':
-    main()
+    main(houses)
